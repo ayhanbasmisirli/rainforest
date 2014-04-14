@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   
-  get 'users/new'
+  get 'sessions/new'
 
-  get 'users/create'
+  get 'sessions/create'
+
+  get 'sessions/destroy'
 
   resources :products
   resources :users, :only =>[:new,:create]
+  resources :sessions,:only =>[:new, :create, :destroy]
   # get 'products/index'
 
   # get 'products/show'
